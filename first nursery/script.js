@@ -98,9 +98,15 @@ document.querySelectorAll('.Rectangle_top').forEach(rectangleTop => {
     });
 });
 
+//CORRECT ANSWER
+document.querySelector('.confirm-button').addEventListener('click', function() {
+    var hintLocation = document.getElementById('hint');
+    hintLocation.classList.toggle('hidden');
+  });
 
 
 // ALERT FOR SUPPORT
-document.querySelector('#support').addEventListener('click', () => {
-    alert('ciao pipponi, come va?');
+document.querySelector('.support-button').addEventListener('click', function() {
+    var curtain = document.getElementById('curtain');
+    curtain.classList.toggle('hidden');
 });
