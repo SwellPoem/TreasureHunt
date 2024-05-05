@@ -1,26 +1,63 @@
 let selectedRectangle = null;
 const originalPositions = new Map();
 const rectangleTops = new Map();
-// Add event listeners to Rectangle items
-document.querySelectorAll('.Tile .Rectangle').forEach(rectangle => {
-    rectangle.addEventListener('click', function handler() {
-        // If the rectangle is on a rectangle_top, remove the event listener and CSS class
-        if (rectangleTops.has(rectangle)) {
-            rectangle.removeEventListener('click', handler);
-            rectangle.classList.remove('hover');
-            return;
-        }
 
-        selectedRectangle = rectangle;
-
-        // Store the original position of each Rectangle
+// when the page loads, the rectangles' original positions are stored
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.Rectangle').forEach(rectangle => {
         const { top, left } = rectangle.getBoundingClientRect();
         originalPositions.set(rectangle, { top, left });
     });
 });
 
+// Define the handler function
+function focusClickHandler() {
+    // If the rectangle is on a rectangle_top, remove the event listener and CSS class
+    if (rectangleTops.has(this)) {
+        this.removeEventListener('click', focusClickHandler);
+        this.classList.remove('hover');
+        return;
+    }
+
+    if (selectedRectangle !== null && selectedRectangle !== this) {
+        var firstSelectedRectangle = this;
+        var secondSelectedRectangle = selectedRectangle;
+
+        // Swap their positions
+        const firstPosition = firstSelectedRectangle.getBoundingClientRect();
+        const secondPosition = secondSelectedRectangle.getBoundingClientRect();
+
+        firstSelectedRectangle.style.transition = 'all 0.5s ease';
+        firstSelectedRectangle.style.top = `${secondPosition.top}px`;
+        firstSelectedRectangle.style.left = `${secondPosition.left}px`;
+
+        secondSelectedRectangle.style.transition = 'all 0.5s ease';
+        secondSelectedRectangle.style.top = `${firstPosition.top}px`;
+        secondSelectedRectangle.style.left = `${firstPosition.left}px`;
+
+        selectedRectangle = null;
+    }
+
+    selectedRectangle = this;
+
+    // Remove the click event listener from all rectangles except the selected one
+    document.querySelectorAll('.Rectangle').forEach(rectangle => {
+        if (rectangle !== selectedRectangle) {
+            rectangle.removeEventListener('click');
+        }
+    });
+
+    selectedRectangle = null;
+}
+
+// Add event listeners to Rectangle items
+document.querySelectorAll('.Rectangle').forEach(rectangle => {
+    rectangle.addEventListener('click', focusClickHandler);
+
+});
+
 // Add event listeners to Rectangle_top items
-document.querySelectorAll('.Tile_top .Rectangle_top').forEach(rectangleTop => {
+document.querySelectorAll('.Rectangle_top').forEach(rectangleTop => {
     rectangleTop.addEventListener('click', () => {
         if (selectedRectangle) {
             // Get the position of the Rectangle item relative to the document
@@ -40,31 +77,30 @@ document.querySelectorAll('.Tile_top .Rectangle_top').forEach(rectangleTop => {
             // Get the position of the Rectangle_top item relative to the document
             const { top: topTop, left: leftTop } = rectangleTop.getBoundingClientRect();
 
-            // If there's a Rectangle on the Rectangle_top, move it back to its original position
-            const existingRectangle = rectangleTops.get(rectangleTop);
-            if (existingRectangle) {
-                const { top, left } = originalPositions.get(existingRectangle);
-                existingRectangle.style.transition = 'all 0.5s ease';
-                existingRectangle.style.top = `${top}px`;
-                existingRectangle.style.left = `${left}px`;
-
-                // Re-enable the event listener and CSS class for the existing rectangle
-                existingRectangle.addEventListener('click', handler);
-                existingRectangle.classList.add('hover');
-            }
-
             // Animate the Rectangle item to the position of the Rectangle_top item
-            selectedRectangle.style.transition = 'all 0.5s ease';
+            selectedRectangle.style.transition = 'all 0.3s ease';
             selectedRectangle.style.top = `${topTop}px`;
             selectedRectangle.style.left = `${leftTop}px`;
 
             // Store the Rectangle on the Rectangle_top
             rectangleTops.set(rectangleTop, selectedRectangle);
 
-            // Clear the stored Rectangle item after the animation
-            setTimeout(() => {
+             // Clear the stored Rectangle item after the animation and add the click event listener back to all rectangles
+             setTimeout(() => {
                 selectedRectangle = null;
+                document.querySelectorAll('.Tile .Rectangle').forEach(rectangle => {
+                    rectangle.addEventListener('click', focusClickHandler);
+                });
             }, 500);
+
+            selectedRectangle = null;
         }
     });
+});
+
+
+
+// ALERT FOR SUPPORT
+document.querySelector('#support').addEventListener('click', () => {
+    alert('ciao pipponi, come va?');
 });
