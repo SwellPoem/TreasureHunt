@@ -56,7 +56,7 @@
 .Tile_top {
   width: 94px;
   height: 94px;
-  top: 5px;
+  top: 12px;
   position: relative;
 }
 
@@ -91,7 +91,7 @@
   width: 94px;
   height: 94px;
   left: 240px;
-  top: 5px;
+  top: 0px;
   position: absolute;
   background: #F0F0F0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
