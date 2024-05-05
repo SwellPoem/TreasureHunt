@@ -35,7 +35,7 @@ function focusClickHandler() {
         secondSelectedRectangle.style.top = `${firstPosition.top}px`;
         secondSelectedRectangle.style.left = `${firstPosition.left}px`;
 
-        selectedRectangle = null;
+        // Remove the line that sets selectedRectangle to null
     }
 
     selectedRectangle = this;

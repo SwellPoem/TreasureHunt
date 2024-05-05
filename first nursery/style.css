@@ -261,6 +261,7 @@ p {
   transition: opacity 0.3s ease;
   animation: slideDown 0.5s ease-out;
   height: 58%;
+  z-index: 5000;
 }
 
 #hint-content {
