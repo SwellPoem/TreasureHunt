@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="Wireframe">
@@ -12,27 +13,33 @@
         <div class="Rectangle2"></div>
         <div class="Frame2">
             <div class="Tile">
-                <div class="Rectangle" tabindex="0"></div>
-
+                <div class="Rectangle" name="hint_soldi">
+                    <img src="assets/soldi.png" alt="soldi" class="Image" name="soldi">
+                </div>
             </div>
 
             <div class="Tile">
-                <div class="Rectangle" tabindex="0"></div>
+                <div class="Rectangle" name="hint_anatra"></div>
                 
             </div>
 
             <div class="Tile">
-                <div class="Rectangle" tabindex="0"></div>
+                <div class="Rectangle" name="hint_mela"></div>
                 
             </div>
 
             <div class="Tile">
-                <div class="Rectangle" tabindex="0"></div>
+                <div class="Rectangle" name="hint_cesta"></div>
                 
             </div>
 
             <div class="Tile">
-                <div class="Rectangle" tabindex="0"></div>
+                <div class="Rectangle" name="hint_sole"></div>
+                
+            </div>
+
+            <div class="Tile">
+                <div class="Rectangle" name="hint_ladro"></div>
                 
             </div>
         
@@ -41,26 +48,26 @@
             <div class="DoubleSelector">
                 <div class="Verse">Le carote nella cesta, come pietre preziose da contare, <br> le mele lucide come specchi, invitano a provare.</div>
                 <div class="Tile_top">
-                    <div class="Rectangle_top"></div>
+                    <div class="Rectangle_top" name="target_cesta"></div>
                 </div>
             </div>
 
             <div class="DoubleSelector">
                 <div class="Verse">Ma attenti al piccolo ladro, con le manine da scimmia, <br> che ruba un’uva dolce, e via tra la folla si slancia.</div>
                 <div class="Tile_top">
-                    <div class="Rectangle_top"></div>
+                    <div class="Rectangle_top" name="target_ladro"></div>
                 </div>
             </div>
 
             <div class="DoubleSelector">
                 <div class="Verse">Alla fine della giornata, quando le ombre si allungano al calar, <br> il contadino raccoglie i soldi, felice di poter riposar.</div>
                 <div class="Tile_top">
-                    <div class="Rectangle_top"></div>
+                    <div class="Rectangle_top" name="target_soldi"></div>
                 </div>
             </div>
         </div>
     </div>
-    <button type="button" class="confirm-button">Confirm</button>
+    <!-- <button type="button" class="confirm-button">Confirm</button> -->
 </body>
 </html>
 
