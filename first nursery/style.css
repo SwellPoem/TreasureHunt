@@ -1,27 +1,33 @@
 .Wireframe {
   width: 100%;
   height: 100%;
-  position: relative;
-  background: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgb(68, 68, 68);
+  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  background-size: cover;
+  background-position: center;
+  background-size: 100%;
 }
 
 .Rectangle1 {
   width: 390px;
   height: 400px;
-  left: 0px;
+  left: 10px;
   top: 50px;
   position: absolute;
-  background: #dcd29ce4;
+  background-color: rgba(245, 213, 0);
   border-radius: 23px;
 }
 
 .Rectangle2 {
   width: 390px;
   height: 270px;
-  left: 0px;
+  left: 10px;
   top: 470px;
   position: absolute;
-  background: #90c4d5;
+  background: #397488;
   border-radius: 23px;
   display: flex;
   flex-wrap: wrap;
@@ -32,7 +38,7 @@
   width: 314px;
   height: 126px;
   top: 491px;
-  left: 28px;
+  left: 38px;
   position: absolute;
   justify-content: flex-start;
   align-items: flex-start;
@@ -98,7 +104,7 @@
   width: 368px;
   height: 464px;
   padding: 10px;
-  left: 12px;
+  left: 22px;
   top: 50px;
   position: absolute;
   flex-direction: column;
@@ -115,137 +121,48 @@
 }
 
 .Verse {
-  width: 173px;
-  left: 16.57px;
+  width: 200px;
+  left: 7px;
   top: 13px;
   position: absolute;
   color: black;
   font-size: 12px;
-  font-family: 'MedievalSharp', cursive;
-  font-weight: 800;
+  font-family: 'JMH Typewriter', sans-serif;
+  font-weight: 400;
   line-height: 21.79px;
   word-wrap: break-word;
 }
 
+
+/* CONFIRM BUTTON */
 .confirm-button {
-  box-sizing: border-box;
-  appearance: none;
-  background-color: transparent;
-  border: 2px solid #90c4d5;
-  border-radius: 0.6em;
-  color: #90c4d5;
-  cursor: pointer;
-  display: block;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1;
-  margin: 15px auto 0;
-  padding: 1.2em 2.8em;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  display: inline-block;
+  background-color: #fbe86bf1;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 30px;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%) translateY(740px);
+  transform: translateX(-50%) translateY(750px);
 
-  &:hover,
-  &:focus {
-    color: #fff;
-    outline: 0;
-  }
-
-  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-  &:hover {
-    box-shadow: 0 0 40px 40px #90c4d5 inset;
-  }
-}
-
-
-  /* .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-  }
-
-  .SupportIcon {
-    top: 300px;
-    left: 0px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  } */
-
-
-.support-button {
-  position: absolute;
-  top: 10px; 
-  left: 10px; 
-  z-index: 2;
-
-  height: 10px;
-  padding: 15px 10px;
-  border: 3px solid currentColor;
-  border-radius: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: #fff;
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  text-decoration: none;
   text-transform: uppercase;
+  color: #397488;
+
+  box-shadow: 0 3px 0 #397488;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  transition: all 100ms linear;
+  
   &:hover {
-    box-shadow: 0 0 40px 40px #ffffffe4 inset;
+      transform: translateX(-50%) translateY(750px);
+      box-shadow: 0 7px 0 #397488;
   }
-}
 
-#curtain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  transition: opacity 0.3s ease;
-  animation: slideDown 0.5s ease-out;
-  height: 35%;
-}
-
-
-#curtain-content {
-  text-align: left;
-  margin-left: 20px;
-  color: #fff;
-  font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-#curtain.hidden {
-  opacity: 0;
-  pointer-events: none;
-  animation: none;
-}
-
-p {
-  margin-bottom: 20px; /* Adjust this value as needed */
-}
-
-@keyframes slideDown {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  &:focus { outline: 0; }
 }
 
 #hint {
@@ -294,3 +211,139 @@ p {
     transform: translateY(0);
   }
 }
+
+/****************************/
+
+/* SUPPPORT BUTTON */
+.support-button {
+  position: absolute;
+  top: 10px; 
+  left: 10px; 
+  z-index: 2;
+
+  height: 10px;
+  padding: 15px 10px;
+  border: 3px solid #397488;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgba(245, 213, 0);
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #397488;
+
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  &:hover {
+    box-shadow: 0 0 40px 40px #397488 inset;
+  }
+}
+
+#curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(245, 213, 0, 0.8);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  animation: slideDown 0.5s ease-out;
+  height: 55%;
+}
+
+
+#curtain-content {
+  text-align: left;
+  margin-left: 20px;
+  color: #000000;
+  font-size: 20px;
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#curtain.hidden {
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+
+p {
+  margin-bottom: 20px; /* Adjust this value as needed */
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/****************************/
+
+/* MENU BUTTON */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(255, 238, 186);
+  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  background-size: cover;
+  background-position: center;
+  background-size: 100%;
+}
+
+.menu h1 {
+  margin-bottom: 50px;
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 45px;
+  text-align: center;
+  color: #397488;
+}
+
+.menu button {
+  display: inline-block;
+  background-color: #ffe043ec;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 30px;
+
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #397488;
+
+  box-shadow: 0 3px 0 #397488;
+  cursor: pointer;
+  transition: all 100ms linear;
+  
+  &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 7px 0 #397488;
+  }
+
+  &:focus { outline: 0; }
+}
+
+.highlight {
+  font-weight: 700;
+}
+/******************************/
