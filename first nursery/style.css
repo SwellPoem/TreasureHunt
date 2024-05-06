@@ -140,7 +140,7 @@ body {
 /* CONFIRM BUTTON */
 .confirm-button {
   display: inline-block;
-  background-color: #ffe043ec;
+  background-color: rgba(245, 213, 0);
   padding: 15px 40px;
   border: none;
   border-radius: 30px;
@@ -160,10 +160,10 @@ body {
   cursor: pointer;
   transition: all 100ms linear;
   
-  &:hover {
+  /* &:hover {
       transform: translateX(-50%) translateY(750px);
       box-shadow: 0 7px 0 #397488;
-  }
+  } */
 
   &:focus { outline: 0; }
 }
@@ -189,7 +189,8 @@ body {
   margin-left: 20px;
   color: #282828;
   font-size: 25px;
-  font-family: 'MedievalSharp', cursive;
+  font-family: 'JMH Typewriter', sans-serif;
+  font-weight: 400;
 }
 
 #hint.hidden {
@@ -202,9 +203,9 @@ body {
   margin-bottom: 20px; /* Adjust this value as needed */
 }
 
-/* .highlight {
-  background-color: rgb(30, 107, 33);
-} */
+.highlight_hint {
+  font-weight: 700;
+}
 
 @keyframes slideDown {
   0% {
@@ -240,9 +241,9 @@ body {
   z-index: 5001;  
 
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-  &:hover {
+  /* &:hover {
     box-shadow: 0 0 40px 40px #397488 inset;
-  }
+  } */
 }
 
 #curtain {
@@ -251,7 +252,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(245, 213, 0, 0.8);
+  background-color: rgba(245, 213, 0, 0.95);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -366,7 +367,7 @@ body {
 
 .menu button {
   display: inline-block;
-  background-color: #ffe043ec;
+  background-color: rgba(245, 213, 0);
   padding: 15px 40px;
   border: none;
   border-radius: 30px;
@@ -383,10 +384,10 @@ body {
   cursor: pointer;
   transition: all 100ms linear;
   
-  &:hover {
+  /* &:hover {
       transform: translateY(-4px);
       box-shadow: 0 7px 0 #397488;
-  }
+  } */
 
   &:focus { outline: 0; }
 }
