@@ -2,6 +2,11 @@ let selectedRectangle = null;
 const originalPositions = new Map();
 const rectangleTops = new Map();
 
+const correctSolutionsMap = new Map([
+    ["target_cesta", "hint_cesta"],
+    ["target_ladro", "hint_ladro"],
+    ["target_soldi", "hint_soldi"]
+]);
 const solutionsMap = new Map();
 
 // when the page loads, the rectangles' original positions are stored
@@ -57,6 +62,16 @@ function focusClickHandler() {
         secondSelectedRectangle.style.top = `${originalFirstRectPosition.top}px`;
         secondSelectedRectangle.style.left = `${originalFirstRectPosition.left}px`;
 
+        // Swap the values in the solutionsMap if they exist
+        for (let [key, value] of solutionsMap.entries()) {
+            if (value === firstSelectedRectangle.getAttribute('name')) {
+                solutionsMap.set(key, secondSelectedRectangle.getAttribute('name'));
+            } else if (value === secondSelectedRectangle.getAttribute('name')) {
+                solutionsMap.set(key, firstSelectedRectangle.getAttribute('name'));
+            }
+        }
+
+
         // Remove the line that sets selectedRectangle to null
         selectedRectangle = null;
         return;
@@ -87,6 +102,7 @@ document.querySelectorAll('.Rectangle_top').forEach(rectangleTop => {
 
             // Force a reflow to make the initial position take effect
             void selectedRectangle.offsetWidth;
+            void rectangleTop.offsetWidth;
 
             // Get the position of the Rectangle_top item relative to the document
             const { top: topTop, left: leftTop } = rectangleTop.getBoundingClientRect();
@@ -98,6 +114,9 @@ document.querySelectorAll('.Rectangle_top').forEach(rectangleTop => {
 
             // Store the Rectangle on the Rectangle_top
             rectangleTops.set(rectangleTop, selectedRectangle);
+
+            // Store the Rectangle's name in the solutionsMap
+            solutionsMap.set(rectangleTop.getAttribute('name'), selectedRectangle.getAttribute('name'));
 
              // Clear the stored Rectangle item after the animation and add the click event listener back to all rectangles
              setTimeout(() => {
@@ -114,8 +133,22 @@ document.querySelectorAll('.Rectangle_top').forEach(rectangleTop => {
 
 //CORRECT ANSWER
 document.querySelector('.confirm-button').addEventListener('click', function() {
+
+    if (solutionsMap.size !== correctSolutionsMap.size) {
+        showMistakeMessage("Hai sbagliato qualcosa! Riprova.");
+        return;
+    }
+
+    for (let [key, value] of solutionsMap.entries()) {
+        if (correctSolutionsMap.get(key) !== value) {
+            showMistakeMessage("Hai sbagliato qualcosa! Riprova.");
+            return;
+        }
+    }
+
     var hintLocation = document.getElementById('hint');
     hintLocation.classList.toggle('hidden');
+
   });
 
 
@@ -124,3 +157,9 @@ document.querySelector('.support-button').addEventListener('click', function() {
     var curtain = document.getElementById('curtain');
     curtain.classList.toggle('hidden');
 });
+
+function showMistakeMessage(message) {
+    var curtain = document.getElementById('curtain-mistake');
+    curtain.classList.toggle('hidden');
+    document.getElementById('mistake-message').innerHTML = message;
+}
