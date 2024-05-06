@@ -2,6 +2,8 @@ let selectedRectangle = null;
 const originalPositions = new Map();
 const rectangleTops = new Map();
 
+const solutionsMap = new Map();
+
 // when the page loads, the rectangles' original positions are stored
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.Rectangle').forEach(rectangle => {
@@ -23,31 +25,43 @@ function focusClickHandler() {
         var firstSelectedRectangle = this;
         var secondSelectedRectangle = selectedRectangle;
 
-        // Swap their positions
-        const firstPosition = firstSelectedRectangle.getBoundingClientRect();
-        const secondPosition = secondSelectedRectangle.getBoundingClientRect();
+        // Store the original positions
+        const originalFirstRectPosition = firstSelectedRectangle.getBoundingClientRect();
+        const originalSecondRectPosition = secondSelectedRectangle.getBoundingClientRect();
 
-        firstSelectedRectangle.style.transition = 'all 0.5s ease';
-        firstSelectedRectangle.style.top = `${secondPosition.top}px`;
-        firstSelectedRectangle.style.left = `${secondPosition.left}px`;
+        // Append both to the body
+        document.body.appendChild(firstSelectedRectangle);
+        document.body.appendChild(secondSelectedRectangle);
 
-        secondSelectedRectangle.style.transition = 'all 0.5s ease';
-        secondSelectedRectangle.style.top = `${firstPosition.top}px`;
-        secondSelectedRectangle.style.left = `${firstPosition.left}px`;
+        // Set the initial position of the Rectangle items
+        firstSelectedRectangle.style.position = 'absolute';
+        secondSelectedRectangle.style.position = 'absolute';
+
+        firstSelectedRectangle.style.top = `${originalFirstRectPosition.top}px`;
+        firstSelectedRectangle.style.left = `${originalFirstRectPosition.left}px`;
+
+        secondSelectedRectangle.style.top = `${originalSecondRectPosition.top}px`;
+        secondSelectedRectangle.style.left = `${originalSecondRectPosition.left}px`;
+
+        // Force a reflow to make the initial position take effect
+        void firstSelectedRectangle.offsetWidth;
+        void secondSelectedRectangle.offsetWidth;
+
+        // Animate the Rectangle items to the position of the other Rectangle
+        firstSelectedRectangle.style.transition = 'all 0.3s ease';
+        secondSelectedRectangle.style.transition = 'all 0.3s ease';
+
+        firstSelectedRectangle.style.top = `${originalSecondRectPosition.top}px`;
+        firstSelectedRectangle.style.left = `${originalSecondRectPosition.left}px`;
+
+        secondSelectedRectangle.style.top = `${originalFirstRectPosition.top}px`;
+        secondSelectedRectangle.style.left = `${originalFirstRectPosition.left}px`;
 
         // Remove the line that sets selectedRectangle to null
+        selectedRectangle = null;
+        return;
     }
-
     selectedRectangle = this;
-
-    // Remove the click event listener from all rectangles except the selected one
-    document.querySelectorAll('.Rectangle').forEach(rectangle => {
-        if (rectangle !== selectedRectangle) {
-            rectangle.removeEventListener('click');
-        }
-    });
-
-    selectedRectangle = null;
 }
 
 // Add event listeners to Rectangle items
