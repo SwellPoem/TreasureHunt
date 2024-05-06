@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width, minimum-scale=1">
+  	
+  	<link rel="stylesheet"  href="./style.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Walter+Turncoat" />
+  	
+  	
+  	<script src="script.js" defer></script>
+</head>
+<body>
+  	
+  	<div class="wireframe">
+    		<div class="group-parent">
+      			<div class="numberholder-parent" id="numberHolder1">
+        				<div class="numberholder" id="numberHolder1" onclick="loadEquationPage(event)">
+        				</div>
+        				<div class="tile-parent">
+          					<div class="tile">
+            						<div class="tile-child">
+            						</div>
+                                    <div class="div">
+                                        <input type="number" pattern="[0-9]*" inputmode="numeric" placeholder="__" id="1">
+                                    </div>
+          					</div>
+          					<div class="tile">
+            						<div class="tile-child">
+            						</div>
+            						<div class="div">
+                                        <input type="number" pattern="[0-9]*" inputmode="numeric" placeholder="__" id="2">
+                                    </div>
+          					</div>
+        				</div>
+      			</div>
+      			<div class="numberholder-parent" id="numberHolder2">
+        				<div class="numberholder" id="numberHolder2" onclick="loadEquationPage(event)">
+        				</div>
+        				<div class="tile-parent">
+          					<div class="tile">
+            						<div class="tile-child">
+            						</div>
+            						<div class="div">
+                                        <input type="number" pattern="[0-9]*" inputmode="numeric" placeholder="__" id="3">
+                                    </div>
+          					</div>
+          					<div class="tile">
+            						<div class="tile-child">
+            						</div>
+            						<div class="div">
+                                        <input type="number" pattern="[0-9]*" inputmode="numeric" placeholder="__" id="4">
+                                    </div>
+          					</div>
+        				</div>
+      			</div>
+      			<div class="numberholder-parent" id="numberHolder3">
+        				<div class="numberholder" id="numberHolder3" onclick="loadEquationPage(event)">
+        				</div>
+        				<div class="tile-parent">
+          					<div class="tile">
+            						<div class="tile-child">
+            						</div>
+            						<div class="div">
+                                        <input type="number" pattern="[0-9]*" inputmode="numeric" placeholder="__" id="5">
+                                    </div>
+          					</div>
+          					<div class="tile">
+            						<div class="tile-child">
+            						</div>
+            						<div class="div">
+                                        <input type="number" pattern="[0-9]*" inputmode="numeric" placeholder="__" id="6">
+                                    </div>
+          					</div>
+        				</div>
+      			</div>
+      			<div class="numberholder-parent" id="numberHolder4">
+        				<div class="numberholder" id="numberHolder4" onclick="loadEquationPage(event)" >
+        				</div>
+        				<div class="tile-parent">
+          					<div class="tile">
+            						<div class="tile-child">
+            						</div>
+            						<div class="div">
+                                        <input type="number" pattern="[0-9]*" inputmode="numeric" placeholder="__">
+                                    </div>
+          					</div>
+          					<div class="tile">
+            						<div class="tile-child">
+            						</div>
+            						<div class="div">
+                                        <input type="number" pattern="[0-9]*" inputmode="numeric" placeholder="__">
+                                    </div>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+  	</div>
+
+    <div type="button" class="chalk-button" onClick="alert('popi')"></div>
+
+    <button type="button" class="support-button">?</button>
+    <div id="curtain" class="hidden">
+        <div id="curtain-content">
+            <p>Ciao Pipponi!</p>
+            <p>Posizionate le immagini giuste negli slot corrispondenti per completare l'indovinello.</p>
+            <p>Per confermare la soluzione, clicca sul pulsante "CONFERMA".</p>
+            <p>Per chiudere questa tendina clicca sul punto interrogativo.</p>
+            <p>Occhio agli impostori!</p>
+        </div>
+    </div>
+</body>
+</html>
