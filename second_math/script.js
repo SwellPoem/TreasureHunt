@@ -13,7 +13,20 @@ const hintsMap = {
         'P.S.: Si, lo sappiamo, questa è difficile. <br> P.P.S.: Tanti auguri, Manuel. <br> P.P.P.S.: Qualunque sia stata la tua reazione, non fa parte del conteggio del problema.</p>',
 }
 
+const solutionsArray = [41, 83, 47, 12, 50, 37]
+const finalTextArray = ["41 . ", "83", "47 N", "12 . ", "50", "37 E"]
+
+const targetPositionsArray = [
+    {top: 120.5, left: 16.65625},
+    {top: 120.5, left: 142.984375},
+    {top: 120.5, left: 269.3125},
+    {top: 310.5, left: 16.65625},
+    {top: 310.5, left: 142.984375},
+    {top: 310.5, left: 269.3125}
+]
+
 var isClicked = false;
+var doAnimate = true;
 
 //  Get all the numberholder divs
 var numberHolders = document.querySelectorAll('.numberholder-parent');
@@ -52,9 +65,43 @@ function loadEquationPage(event_target) {
 
 }
 
-document.querySelector('.chalk-button').addEventListener('click', function() {
-    document.getElementById('curtain-risolto').classList.toggle('hidden');
-  });
+function checkSolution() {
+    // Get all inputs values and store them in an array
+    var inputs = document.querySelectorAll('input');
+    var inputsArray = [];
+    for (input of inputs) {
+        inputsArray.push(parseInt(input.value));
+    }
+
+    if (inputsArray.toString() === solutionsArray.toString()) {
+        // translate each of the inputs smoothly to the position as described in the targetPositionsArray
+        if (doAnimate) {
+            for (i = 0; i < inputs.length; i++) {
+                // translate it to the bottom of the body first
+                inputs[i].style.top = '100vh';
+
+                document.body.appendChild(inputs[i]);
+                void inputs[i].offsetWidth;
+                inputs[i].style.position = 'absolute';
+                inputs[i].style.transition = 'all 3s ease';
+                inputs[i].style.top = `${targetPositionsArray[i].top}px`;
+                inputs[i].style.width = '100px';
+                inputs[i].style.left = `calc(${targetPositionsArray[i].left}px + 8%)`;
+                inputs[i].style.borderImage='url("https://www.unicefusa.org/sites/default/files/answer-box.png") 0';
+                inputs[i].type = 'text';
+                inputs[i].value = finalTextArray[i];
+            }
+            
+            // darken the color of the background
+            document.body.style.backgroundColor = 'black';
+        }
+        doAnimate = false;
+    } else {
+        // abbassa la curtain
+        document.getElementById('curtain-risolto').classList.toggle('hidden');
+
+    }
+}
 
 // ALERT FOR SUPPORT
 document.querySelector('.support-button').addEventListener('click', function() {
