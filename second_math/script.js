@@ -52,6 +52,10 @@ function loadEquationPage(event_target) {
 
 }
 
+document.querySelector('.chalk-button').addEventListener('click', function() {
+    document.getElementById('curtain-risolto').classList.toggle('hidden');
+  });
+
 // ALERT FOR SUPPORT
 document.querySelector('.support-button').addEventListener('click', function() {
     var curtain = document.getElementById('curtain');
