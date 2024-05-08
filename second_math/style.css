@@ -156,7 +156,7 @@ body {
   font-weight: 700;
 }
 /******************************/
-
+        
 /****************************/
 
 /* SUPPPORT BUTTON */
@@ -170,6 +170,7 @@ body {
   padding: 15px 10px;
   border: 3px solid #397488;
   border-radius: 10px;
+  font-family: "Play", sans-serif;
   font-size: 20px;
   font-weight: bold;
   background-color: rgba(245, 213, 0);
@@ -203,7 +204,6 @@ body {
   z-index: 5000;  
 }
 
-
 #curtain-content {
   text-align: left;
   margin-left: 20px;
@@ -221,6 +221,82 @@ body {
   animation: none;
 }
 
+
+/**************
+     hint button
+**********************/
+.hints-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+
+  height: 10px;
+  padding: 15px 10px;
+  border: 3px solid #397488;
+  border-radius: 10px;
+  font-family: "Play", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgba(245, 213, 0);
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  color: #397488;
+  z-index: 5001;  
+
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  /* &:hover {
+    box-shadow: 0 0 40px 40px #397488 inset;
+  } */
+
+}
+
+.hints-button.hidden {
+  display: none;
+}
+
+#curtain-hint {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(245, 213, 0, 0.95);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  animation: slideDown 0.5s ease-out;
+  height: 90%;
+  z-index: 5000;  
+}
+
+#curtain-hint-content {
+  text-align: center;
+  margin: 20px;
+  transform: translateY(-50%);
+  color: #000000;
+  font-size: 35px;
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#curtain-hint.hidden {
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+
+
+/***************
+    mistake button
+****************/
+
 #curtain-mistake {
   position: fixed;
   top: 0;
@@ -235,17 +311,6 @@ body {
   animation: slideDown 0.5s ease-out;
   height: 55%;
   z-index: 5000;  
-}
-
-
-#curtain-content {
-  text-align: left;
-  margin-left: 20px;
-  color: #000000;
-  font-size: 20px;
-  font-family: "Play", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 #curtain-mistake.hidden {

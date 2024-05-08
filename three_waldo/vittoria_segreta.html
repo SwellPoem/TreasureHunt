@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+	
+	</head>
+  <body>
+
+    <div style="width: 100%">
+        <img src="./assets/brighella.png" alt="Vittoria" style="height: 60vh; margin: 2vw">
+    </div>
+    <div id="curtain-content">
+        <br><br>
+        <p><b>Eh brighella!</b></p>
+        <p>Ma che pensavate di fotterci così?</p>
+        <p>Avete pensato bene. Complimenti!</p>
+    </div>
+
+    <button type="button" class="support-button">?</button>
+    <div id="curtain" class="hidden">
+        <div id="curtain-content">
+            <br><br>
+            <p><b>Eh brighella!</b></p>
+            <p>Ma che pensavate di fotterci così?</p>
+            <p>Avete pensato bene. Complimenti!</p>
+        </div>
+    </div>
+
+
+    <script>
+        document.querySelector('.support-button').addEventListener('click', function() {
+            var curtain = document.getElementById('curtain');
+            curtain.classList.toggle('hidden');
+        });
+    </script>
+  </body>
+</html>

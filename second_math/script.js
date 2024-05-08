@@ -13,6 +13,12 @@ const hintsMap = {
         'P.S.: Si, lo sappiamo, questa è difficile. <br> P.P.S.: Tanti auguri, Manuel. <br> P.P.P.S.: Qualunque sia stata la tua reazione, non fa parte del conteggio del problema.</p>',
 }
 
+const suggerimentiMap = {
+    'numberHolder1': "Va bene... Ma solo per questa volta! <br><br> 4x + 2y = 330 <br> x + 2y = 207",
+    'numberHolder2': "Questa è per facilitarvi un po'la vita... <br><br> x + y = 59 <br> 3x + y = 153",
+    'numberHolder3': "Vi capiamo, siete stanchi... <br><br> x - y = 13 <br> 2x - y = 63"
+}
+
 const solutionsArray = [41, 83, 47, 12, 50, 37]
 const finalTextArray = ["41 . ", "83", "47 N", "12 . ", "50", "37 E"]
 
@@ -54,6 +60,12 @@ function loadEquationPage(event_target) {
         console.log(event_target.target.id)
         equationPage.innerHTML = '<div class="hint-text"> '+ hintsMap[event_target.target.id.split("[0-9]")[0]] + '</div>';
         document.body.appendChild(equationPage);
+
+        // Insert text into hints-curtain text
+        var hintsCurtainText = document.getElementById('curtain-hint-content');
+        hintsCurtainText.innerHTML = suggerimentiMap[event_target.target.id];
+
+
     } else {
         // Remove the equation page
         document.getElementById('equationPage').remove();
@@ -61,7 +73,10 @@ function loadEquationPage(event_target) {
         for (holder of numberHolders) {
             holder.style.display = 'block';
         }
+
     }
+    var hintsButton = document.getElementById('hints-button')
+    hintsButton.classList.toggle('hidden');
 
 }
 
@@ -78,7 +93,7 @@ function checkSolution() {
         if (doAnimate) {
             for (i = 0; i < inputs.length; i++) {
                 // translate it to the bottom of the body first
-                inputs[i].style.top = '100vh';
+                // inputs[i].style.top = '100vh';
 
                 document.body.appendChild(inputs[i]);
                 void inputs[i].offsetWidth;
@@ -87,13 +102,10 @@ function checkSolution() {
                 inputs[i].style.top = `${targetPositionsArray[i].top}px`;
                 inputs[i].style.width = '100px';
                 inputs[i].style.left = `calc(${targetPositionsArray[i].left}px + 8%)`;
-                inputs[i].style.borderImage='url("https://www.unicefusa.org/sites/default/files/answer-box.png") 0';
+                // inputs[i].style.borderImage='url("https://www.unicefusa.org/sites/default/files/answer-box.png") 0';
                 inputs[i].type = 'text';
                 inputs[i].value = finalTextArray[i];
             }
-            
-            // darken the color of the background
-            document.body.style.backgroundColor = 'black';
         }
         doAnimate = false;
     } else {
@@ -106,5 +118,10 @@ function checkSolution() {
 // ALERT FOR SUPPORT
 document.querySelector('.support-button').addEventListener('click', function() {
     var curtain = document.getElementById('curtain');
+    curtain.classList.toggle('hidden');
+});
+
+document.querySelector('.hints-button').addEventListener('click', function() {
+    var curtain = document.getElementById('curtain-hint');
     curtain.classList.toggle('hidden');
 });
