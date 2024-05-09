@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
 	
 	</head>
-  <body style="background-image: url(https://www.transparenttextures.com/patterns/inspiration-geometry.png); background-color: rgb(201, 247, 203);background-position: center; background-size: 100%;">
+  <body style="background-image: url(https://www.transparenttextures.com/patterns/inspiration-geometry.png); background-color: rgb(245, 104, 104);background-position: center; background-size: 100%;">
 
     <div id="vittoria-content" style="margin-top: 50%;">
         <br><br>
-        <h1>Che occhio!</h1>
-        <p>...alla fine, un ago nel pagliaio!</p>
+        <h1>Niente da fare!</h1>
+        <p>Ci somiglia, ma non è lui.</p>
         <br>
-        <p>...oppure...un ago nel <span class="highlight">granaio</span>?</p>
+        <p>Torna indietro, aguzza la vista e riprova!</p>
     </div>
 
-    <button type="button" class="support-button">?</button>
+    <button type="button" class="back-button"> << </button>
     <div id="curtain" class="hidden">
         <div id="curtain-content">
             <br><br>
@@ -26,10 +26,9 @@
     </div>
 
     <script>
-        document.querySelector('.support-button').addEventListener('click', function() {
-            var curtain = document.getElementById('curtain');
-            curtain.classList.toggle('hidden');
+        document.querySelector('.back-button').addEventListener('click', function() {
+          window.location.href = 'waldo.html';
         });
-    </script>
+      </script>
   </body>
 </html>

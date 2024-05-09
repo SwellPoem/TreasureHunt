@@ -2,6 +2,7 @@
 var waldoImage;
 var margin = 25;
 const waldoCoordinates = { x: 1189 , y: 464 };
+const fakeWaldoCoordinates = { x: 209 , y: 430 };
 
 function preload() {
     waldoImage = loadImage('./assets/waldo.jpg')
@@ -21,6 +22,14 @@ function mouseClicked() {
     if (mouseX > waldoCoordinates.x - margin && mouseX < waldoCoordinates.x + margin && mouseY > waldoCoordinates.y - margin && mouseY < waldoCoordinates.y + margin) {
         vittoria(false);
     }
+    if (mouseX > fakeWaldoCoordinates.x - margin && mouseX < fakeWaldoCoordinates.x + margin && mouseY > fakeWaldoCoordinates.y - margin && mouseY < fakeWaldoCoordinates.y + margin) {
+        ciSomiglia(false);
+    }
+}
+
+function ciSomiglia() {
+    window.open('./ci_somiglia.html')
+    noLoop();
 }
 
 function vittoriaSegreta() {
