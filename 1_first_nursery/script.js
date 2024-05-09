@@ -3,7 +3,7 @@ const originalPositions = new Map();
 const rectangleTops = new Map();
 
 const correctSolutionsMap = new Map([
-    ["target_cesta", "hint_tesoro"],
+    ["target_tesoro", "hint_tesoro"],
     ["target_ladro", "hint_ladro"],
     ["target_soldi", "hint_soldi"]
 ]);
@@ -148,6 +148,8 @@ document.querySelector('.confirm-button').addEventListener('click', function() {
 
     var hintLocation = document.getElementById('hint');
     hintLocation.classList.toggle('hidden');
+    setTimeout(() => { frameLooper();}, 1000);
+    // frameLooper();
 
   });
 
@@ -162,4 +164,20 @@ function showMistakeMessage(message) {
     var curtain = document.getElementById('curtain-mistake');
     curtain.classList.toggle('hidden');
     document.getElementById('mistake-message').innerHTML = message;
+}
+
+// animation
+
+var string = "mercato"; /* type your text here */
+var array = string.split("");
+var timer;
+
+function frameLooper () {
+	if (array.length > 0) {
+		document.getElementById("highlight_hint").innerHTML += array.shift();
+	} else {
+		clearTimeout(timer);
+			}
+	loopTimer = setTimeout('frameLooper()',300); /* change 70 for speed */
+
 }

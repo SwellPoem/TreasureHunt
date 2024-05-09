@@ -106,8 +106,17 @@ function checkSolution() {
                 inputs[i].type = 'text';
                 inputs[i].value = finalTextArray[i];
             }
+
+
+            // get all numberholder-parents
+            var numberHolders = document.querySelectorAll('.numberholder-parent');
+            // hide them
+            for (holder of numberHolders) {
+                holder.style.display = 'none';
+            }
+
+            doAnimate = false;
         }
-        doAnimate = false;
     } else {
         // abbassa la curtain
         document.getElementById('curtain-risolto').classList.toggle('hidden');

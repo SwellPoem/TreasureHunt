@@ -70,7 +70,9 @@ input {
   margin-bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-image: "url(./assets/math.png)";
+  /* border: 7px solid white; */
+  border-radius: 23px;
+  background: #03793e8a;
 }
 
 .group-parent {
@@ -98,10 +100,6 @@ input {
 }
 
 /* MENU BUTTON */
-body {
-  margin: 0;
-  padding: 0;
-}
 
 .menu {
   display: flex;
@@ -123,6 +121,7 @@ body {
   font-size: 45px;
   text-align: center;
   color: #397488;
+  padding: 20px;
 }
 
 .menu button {
@@ -347,12 +346,12 @@ body {
   color: #E8E8E8;
   font-family: "Walter Turncoat", cursive;
   display: block;
-  width: 80%;
+  /* width: 80%; */
   height: 90%;
   min-height: auto;
   /* margin: 30px auto 0 auto; */
   background-color: #497959;
-  padding: 20px 30px;
+  /* padding: 20px 30px; */
   overflow-y: auto;
   box-shadow: -1px 2px 2px 0px #555, inset 0 0 10px 0 #555;
   -webkit-border-radius: 10px;

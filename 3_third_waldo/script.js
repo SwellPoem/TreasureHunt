@@ -28,7 +28,7 @@ function mouseClicked() {
 }
 
 function ciSomiglia() {
-    window.open('./ci_somiglia.html')
+    window.location.href = './ci_somiglia.html'
     noLoop();
 }
 
@@ -38,9 +38,9 @@ function vittoriaSegreta() {
 
 function vittoria(segreta) {
     if (segreta) {
-        window.open('./vittoria_segreta.html')
+        window.location.href = './vittoria_segreta.html'
     } else {
-        window.open('./vittoria.html')
+        window.location.href = './vittoria.html'
     }
     noLoop();
 } 

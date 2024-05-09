@@ -205,6 +205,7 @@ body {
 
 .highlight_hint {
   font-weight: 700;
+  text-decoration: underline;
 }
 
 @keyframes slideDown {
