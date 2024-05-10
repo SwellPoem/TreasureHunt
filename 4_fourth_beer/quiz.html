@@ -1,59 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="initial-scale=1, width=device-width">
-  	
-  	<link rel="stylesheet"  href="./style.css" />
-  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Play:wght@400&display=swap" />
-  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lucida Sans Typewriter:wght@400&display=swap" />
-  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arial:wght@700&display=swap" />
-  	
+      <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1, width=device-width">
+      
+      <link rel="stylesheet"  href="./style.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Play:wght@400&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lucida Sans Typewriter:wght@400&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arial:wght@700&display=swap" />
+      <script src="./script.js" defer></script>
 </head>
 <body>
-  	
-  	<div class="wireframe">
-    		<div class="background">
+      
+      <div class="wireframe">
+            <div class="background">
                   <div class="question-container">
-                        <div class="question-text">Question text</div>
+                        <div class="question-text" id="question-text">Question text</div>
                   </div>
                   <div class="options-parent">
-                    <div class="option">
-                          <div class="option-child"></div>
-                          <div class="answer-text">Answer text</div>
-                    </div>
-                    <div class="option">
-                          <div class="option-child"></div>
-                          <div class="answer-text">Answer text</div>
-                    </div>
-                    <div class="option">
-                          <div class="option-child"></div>
-                          <div class="answer-text">Answer text</div>
-                    </div>
-                    <div class="option">
-                          <div class="option-child"></div>
-                          <div class="answer-text">Answer text</div>
-                    </div>
-              </div>
-    		</div>
-  	</div>
+                        <div class="option">
+                              <input type="radio" class="option-child" name="quiz-option">
+                              <div class="answer-text" id="answer-text">Answer text</div>
+                        </div>
+                        <div class="option">
+                              <input type="radio" class="option-child" name="quiz-option">
+                              <div class="answer-text" id="answer-text">Answer text</div>
+                        </div>
+                        <div class="option">
+                              <input type="radio" class="option-child" name="quiz-option">
+                              <div class="answer-text" id="answer-text">Answer text</div>
+                        </div>
+                        <div class="option">
+                              <input type="radio" class="option-child" name="quiz-option">
+                              <div class="answer-text" id="answer-text">Answer text</div>
+                        </div>
+                  </div>
+            </div>
+      </div>
       <button type="button" class="confirm-button">Conferma</button>
 
-
-            
       <button type="button" class="support-button">?</button>
       <div id="curtain" class="hidden">
             <div id="curtain-content">
-              <p>Ciao Pipponi!</p>
-              <p>Posizionate le immagini giuste negli slot corrispondenti per completare l'indovinello.</p>
-              <p>Per confermare la soluzione, clicca sul pulsante "CONFERMA".</p>
-              <p>Per chiudere questa tendina clicca sul punto interrogativo.</p>
-              <p>Occhio agli impostori!</p>
+                  <p>Ciao Pipponi!</p>
+                  <p>Posizionate le immagini giuste negli slot corrispondenti per completare l'indovinello.</p>
+                  <p>Per confermare la soluzione, clicca sul pulsante "CONFERMA".</p>
+                  <p>Per chiudere questa tendina clicca sul punto interrogativo.</p>
+                  <p>Occhio agli impostori!</p>
             </div>
       </div>
-  	
-  	
-  	
-  	
+      
+      
+      
+      
 </body>
 </html>
