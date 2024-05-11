@@ -40,24 +40,42 @@ for (var i = 0; i < options.length; i++) {
 }
 
 const questionsMap = {
-    1: "Prima domanda: Quante birre ci sono in totale?",
-    2: "Seconda domanda: Quante birre sono state aggiunte?",
-    3: "Terza domanda: Quante birre sono state tolte?",
-    4: "Quarta domanda: Quante birre sono rimaste?"
+    1: "Quale cereale è comunemente utilizzato nella produzione di bevande fermentate?",
+    2: "Quale parte dell'orzo viene utilizzata per produrre il malto?",
+    3: "In che processo biologico gli zuccheri vengono convertiti in alcol ed anidride carbonica?",
+    4: "Quale enzima presente nel malto è essenziale per la successiva conversione degli zuccheri in alcol durante la fermentazione?",
+    5: "Qual è il nome della sostanza chimica prodotta durante la fermentazione alcolica?",
+    6: "Qual è il tipo principale di fermentazione utilizzato nella produzione della birra?",
+    7: "Qual è il nome del processo di aggiunta del luppolo durante l'ebollizione del mosto?",
+    8: "Qual è il nome del birrificio più antico in Irlanda, fondato nel 1759?",
+    9: "Qual è il nome della famosa birra rossa irlandese?",
+    10: "Qual è il tipo di bicchiere tradizionalmente usato per la birra Weiss?"
 }
 
 const answersMap = {
-    1: ["uno", "due", "tre", "quattro"],
-    2: ["cinque", "sei", "sette", "otto"],
-    3: ["nove", "dieci", "undici", "dodici"],
-    4: ["tredici", "quattordici", "quindici", "sedici"]
+    1: ["Grano", "Orzo", "Riso", "Mais"],
+    2: ["Germoglio", "Radice", "Fusto", "Foglia"],
+    3: ["Fotosintesi", "Respirazione cellulare", "Traspirazione", "Fermentazione"],
+    4: ["Proteasi", "Lipasi", "Amilasi", "Cellulasi"],
+    5: ["Etanolo", "Etere", "Aldeide", "Metano"],
+    6: ["Arobica", "Alcolica", "Lattica", "Acetica"],
+    7: ["Hopping", "Whirpooling", "Dry-Hopping", "Bittering"],
+    8: ["Guinness", "Murphy's", "Smithwick's", "Kilkenny"],
+    9: ["Guinness", "Murphy's", "Kilkenny", "Smithwick's"],
+    10: ["Pinta", "Weissbier", "Coppa", "Flute"]
 }
 
 const correctAnswers = {
-    1: "quattro",
-    2: "otto",
-    3: "dieci",
-    4: "quattordici"
+    1: "Orzo",
+    2: "Germoglio",
+    3: "Fermentazione",
+    4: "Amilasi",
+    5: "Etanolo",
+    6: "Alcolica",
+    7: "Dry-Hopping",
+    8: "Guinness",
+    9: "Smithwick's",
+    10: "Weissbier"
 }
 
 var currentQuestion = 1;
@@ -71,6 +89,7 @@ function loadQuestion() {
     for (var i = 0; i < answersDOM.length; i++) {
         answersDOM[i].innerText = answers[i];
         radioDOMs[i].value = answers[i];
+        radioDOMs[i].checked = false;
     }
 
     document.getElementById('answer-text').innerHTML = answersHtml;
@@ -80,7 +99,7 @@ function checkAnswer(answer) {
     console.log(answer);
     if (answer === correctAnswers[currentQuestion]) {
         currentQuestion++;
-        if (currentQuestion > 4) {
+        if (currentQuestion > correctAnswers.length) {
             document.getElementById('curtain').classList.add('hidden');
         } else {
             loadQuestion();
