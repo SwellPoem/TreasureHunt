@@ -20,8 +20,8 @@ button.addEventListener('click', function() {
         // If this radio button is checked
         if (radioButtons[i].checked) {
             // Call the checkAnswer function, passing the value of the radio button
-            console.log(radioButtons[i]);
-            checkAnswer(radioButtons[i].value);
+            // console.log(radioButtons[i]);
+            checkAnswer(radioButtons[i]);
             break;
         }
     }
@@ -48,7 +48,7 @@ const questionsMap = {
     6: "Qual è il tipo principale di fermentazione utilizzato nella produzione della birra?",
     7: "Qual è il nome del processo di aggiunta del luppolo durante l'ebollizione del mosto?",
     8: "Qual è il nome del birrificio più antico in Irlanda, fondato nel 1759?",
-    9: "Qual è il nome della famosa birra rossa irlandese?",
+    9: "Qual è il nome della famosa birra <u>rossa</u> irlandese?",
     10: "Qual è il tipo di bicchiere tradizionalmente usato per la birra Weiss?"
 }
 
@@ -61,7 +61,7 @@ const answersMap = {
     6: ["Arobica", "Alcolica", "Lattica", "Acetica"],
     7: ["Hopping", "Whirpooling", "Dry-Hopping", "Bittering"],
     8: ["Guinness", "Murphy's", "Smithwick's", "Kilkenny"],
-    9: ["Guinness", "Murphy's", "Kilkenny", "Smithwick's"],
+    9: ["Murphy's", "Kilkenny", "Guinness", "Smithwick's"],
     10: ["Pinta", "Weissbier", "Coppa", "Flute"]
 }
 
@@ -78,10 +78,10 @@ const correctAnswers = {
     10: "Weissbier"
 }
 
-var currentQuestion = 1;
+var currentQuestion = 10;
 
 function loadQuestion() {
-    document.getElementById('question-text').innerText = questionsMap[currentQuestion];
+    document.getElementById('question-text').innerHTML = questionsMap[currentQuestion];
     var answers = answersMap[currentQuestion];
     // associate each answer to a "answer-text" element
     var answersDOM = document.getElementsByClassName('answer-text');
@@ -95,18 +95,29 @@ function loadQuestion() {
     document.getElementById('answer-text').innerHTML = answersHtml;
 }
 
-function checkAnswer(answer) {
-    console.log(answer);
+function checkAnswer(element) {
+    var answer = element.value;
     if (answer === correctAnswers[currentQuestion]) {
         currentQuestion++;
-        if (currentQuestion > correctAnswers.length) {
-            document.getElementById('curtain').classList.add('hidden');
+        if (currentQuestion > Object.keys(correctAnswers).length) {
+            showSuccessCurtain();
         } else {
             loadQuestion();
         }
     } else {
-        alert("Risposta sbagliata, riprova!");
+        var option = element.parentElement;
+        option.style.animation = 'shake 0.5s';
+        option.style.animationIterationCount = '1';
+
+        option.addEventListener('animationend', () => {
+            option.style.animation = '';
+        });
     }
+}
+
+function showSuccessCurtain() {
+    var successCurtain = document.getElementById('successCurtain');
+    successCurtain.classList.remove('hidden');
 }
 
 loadQuestion();

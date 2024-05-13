@@ -5,7 +5,8 @@ const hintsMap = {
         'Ilaria, che vendeva solo bicchieri di limonata al doppio del prezzo dei biscotti, ha incassato 207 euro in un giorno, vendendo un certo numero di bicchieri di limonata e il doppio dei pacchetti di biscotti rispetto ai bicchieri di limonata. <i>Che business signori!</i> <br><br>'+
         'Quanto se le facevano pagare, ‘ste sporche capitaliste, ogni singolo pacco di biscotti e bicchiere di limonata? Spoiler: un botto, ma è un problema di matematica per una caccia al tesoro, non fatevi troppe domande, deve solo sembrare un casino.</p>',
     'numberHolder2': 
-        'Il caro maestro Gabriele ha deciso di espandere la sua attività di maestro di scuola di ciclismo, espandendo il business lateralmente: perchè non includere, oltre ai bicicli, monocicli e tricicli? Che idea! Contattando il suo fornitore, questi gli dice che nel suo magazzino ci sono in totale 59 fra tricicli e monocicli, e che il numero totale di copertoni per poter equipaggiare correttamente il suo nuovo arsenale è di 153 unità. Quanti monocicli e tricicli ha Gabriele nel suo nuovo magazzino?',
+        'Il caro maestro Gabriele ha deciso di espandere la sua attività di maestro di scuola di ciclismo, espandendo il business lateralmente: perchè non includere, oltre ai bicicli, monocicli e tricicli? Che idea! Contattando il suo fornitore, questi gli dice che nel suo magazzino ci sono in totale 59 fra tricicli e monocicli, '+ 
+        'e che il numero totale di copertoni per poter equipaggiare correttamente il suo nuovo arsenale è di 153 unità. Quanti tricicli e monocicli ha Gabriele nel suo nuovo magazzino?',
     'numberHolder3': 
         '<p>Manuel, grazie ai suoi amici che adorano prendersi gioco di lui, festeggia un compleanno quasi ogni mese! <br><br>' +
         'All’ennesima celebrazione randomica, Manuel è impazzito, e ha deciso di calcolare quante volte ha reagito in modo carino e quante in modo incazzato, con un sistema di punteggio cervellotico <i>(ma è anche l’ultimo problema del set, quindi non rompete le palle)</i>: <br> ' +
@@ -120,7 +121,25 @@ function checkSolution() {
     } else {
         // abbassa la curtain
         document.getElementById('curtain-risolto').classList.toggle('hidden');
+        var curtainText = document.getElementById('curtain-risolto-content');
+        // count the non-empty inputs in inputsArray
+        const count = inputsArray.reduce((count, input) => input ? count + 1 : count, 0);
+        
+        if (count === 0) {
+            curtainText.innerHTML = 'Non hai inserito nessun valore! <br> Riprova!';
+            return;
+        } else {
+            var wrongInputs = 0
+            for (i = 0; i < inputsArray.length; i++) {
+                if (inputsArray[i] !== solutionsArray[i]) {
+                    wrongInputs++;
+                }
+            }
+            curtainText.innerHTML = `Hai sbagliato <b>${wrongInputs}</b> risposte! <br> Controlla bene...`;
+        }
 
+        
+        
     }
 }
 
