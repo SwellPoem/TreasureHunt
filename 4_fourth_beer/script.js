@@ -78,7 +78,7 @@ const correctAnswers = {
     10: "Weissbier"
 }
 
-var currentQuestion = 10;
+var currentQuestion = 1;
 
 function loadQuestion() {
     document.getElementById('question-text').innerHTML = questionsMap[currentQuestion];
