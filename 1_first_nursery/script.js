@@ -3,9 +3,9 @@ const originalPositions = new Map();
 const rectangleTops = new Map();
 
 const correctSolutionsMap = new Map([
-    ["target_tesoro", "hint_tesoro"],
-    ["target_ladro", "hint_ladro"],
-    ["target_soldi", "hint_soldi"]
+    ["target_contadino", "hint_contadino"],
+    ["target_pescatore", "hint_pescatore"],
+    ["target_ladro", "hint_ladro"]
 ]);
 const solutionsMap = new Map();
 

@@ -173,14 +173,13 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 80%;
   background-color: rgba(28, 144, 32, 0.9); /* Semi-transparent black */
   display: flex;
   justify-content: flex-start;
   align-items: center;
   transition: opacity 0.3s ease;
   animation: slideDown 0.5s ease-out;
-  height: 58%;
   z-index: 5000;
 }
 
@@ -285,14 +284,13 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(245, 49, 0, 0.8);
+  height: 55%;
+  background-color: rgba(245, 49, 0, 0.9);
   display: flex;
   justify-content: flex-start;
   align-items: center;
   transition: opacity 0.3s ease;
   animation: slideDown 0.5s ease-out;
-  height: 55%;
   z-index: 5000;  
 }
 
