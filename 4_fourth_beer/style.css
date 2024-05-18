@@ -149,11 +149,6 @@ body {
     box-shadow: 0 3px 0 #397488;
     cursor: pointer;
     transition: all 100ms linear;
-    
-    /* &:hover {
-        transform: translateX(-50%) translateY(750px);
-        box-shadow: 0 7px 0 #397488;
-    } */
   
     &:focus { outline: 0; }
   }
@@ -230,7 +225,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgba(182, 130, 174, 0.825);
+    background-color: rgba(146, 97, 140, 0.825);
     background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
     background-size: cover;
     background-position: center;
