@@ -73,6 +73,7 @@ window.draw = function(puzzle, target='puzzle') {
     rightBox.setAttribute('fill', 'url(#fadeOutRight)')
     rightBox.setAttribute('style', 'pointer-events: none')
     svg.appendChild(rightBox)
+
   }
 }
 
