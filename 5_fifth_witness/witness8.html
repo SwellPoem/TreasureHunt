@@ -1,0 +1,89 @@
+<html>
+<head>
+  <title>Witness</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="./engine/utilities.js"></script>
+  <script type="text/javascript" src="./engine/svg.js"></script>
+  <script async type="text/javascript" src="./engine/polyominos.js"></script>
+  <script async type="text/javascript" src="./engine/puzzle.js"></script>
+  <script async type="text/javascript" src="./engine/validate.js"></script>
+  <script async type="text/javascript" src="./engine/custom_mechanics.js"></script>
+  <script async type="text/javascript" src="./engine/display2.js"></script>
+  <script async type="text/javascript" src="./engine/trace2.js"></script>
+  <script async type="text/javascript" src="onLoadScripts.js"></script>
+  <script>
+    function loadPuzzle() {
+      var puzzle = Puzzle.deserialize(" {\"grid\":[[{\"type\":\"line\",\"line\":3,\"dir\":null,\"end\":\"left\"},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null,\"start\":true}],[{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null}],[{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null}],[{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"square\",\"color\":\"black\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"square\",\"color\":\"black\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null}],[{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null},{\"type\":\"line\",\"line\":3,\"dir\":null}],[{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"square\",\"color\":\"white\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"square\",\"color\":\"white\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"square\",\"color\":\"white\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null}],[{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"right\"}],[{\"type\":\"line\",\"line\":2,\"dir\":\"left\"},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"square\",\"color\":\"black\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"square\",\"color\":\"black\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":2,\"dir\":\"right\"}],[{\"type\":\"line\",\"line\":2,\"dir\":\"left\"},{\"type\":\"line\",\"line\":2,\"dir\":\"top\"},{\"type\":\"line\",\"line\":2,\"dir\":\"top\"},{\"type\":\"line\",\"line\":2,\"dir\":\"top\"},{\"type\":\"line\",\"line\":2,\"dir\":\"top\"},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":2,\"dir\":\"right\"},{\"type\":\"line\",\"line\":2,\"dir\":\"top\"},{\"type\":\"line\",\"line\":2,\"dir\":\"top\"}],[{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":2,\"dir\":\"left\"},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":2,\"dir\":\"right\"},{\"type\":\"nonce\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null}],[{\"type\":\"line\",\"line\":2,\"dir\":\"down\",\"start\":true},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"left\"},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":0,\"dir\":null},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":\"down\"},{\"type\":\"line\",\"line\":2,\"dir\":null,\"end\":\"right\"}]],\"largezero\":242,\"width\":11,\"height\":11,\"pillar\":false,\"settings\":{\"NEGATIONS_CANCEL_NEGATIONS\":true,\"SHAPELESS_ZERO_POLY\":false,\"PRECISE_POLYOMINOS\":true,\"FLASH_FOR_ERRORS\":true,\"FAT_STARTPOINTS\":false,\"CUSTOM_MECHANICS\":false},\"symmetry\":{\"x\":true,\"y\":true},\"name\":\"Unnamed Rotational Symmetry Puzzle\",\"hasNegations\":false,\"hasPolyominos\":false,\"startPoint\":{\"x\":10,\"y\":0},\"endPoint\":{\"x\":10,\"y\":10},\"autoSolved\":true,\"path\":[{\"x\":10,\"y\":0},4,4,4,4,1,1,3,3,3,3,1,1,4,4,4,4,4,4,4,4,4,4,2,2,3,3,2,2,4,4,0]}\r\n")
+      draw(puzzle)
+    }
+  </script>
+</head>
+<body>
+  <script>loadHeader("Lunar Cycle I")</script>
+  <div style="display: flex; justify-content: center; align-items: center">
+    <svg id="puzzle" style="pointer-events: auto"></svg>
+  </div>
+</body>
+<script type="module">
+  
+  import { resizePuzzle } from './onLoadScripts.js';
+  
+  var onLoadFunctions = [];
+  
+  function addOnLoad(funcName) {
+    onLoadFunctions[onLoadFunctions.length] = funcName;
+  }
+  
+  function executeOnLoad() {
+    for (var i=0; i<onLoadFunctions.length; i++) onLoadFunctions[i]();
+  }
+  
+  addOnLoad(loadPuzzle);
+  addOnLoad(resizePuzzle);
+  
+  window.onload = executeOnLoad;
+  
+  var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+  
+  function preventDefault(e) {
+    e.preventDefault();
+  }
+  
+  function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+      preventDefault(e);
+      return false;
+    }
+  }
+  
+  // modern Chrome requires { passive: false } when adding event
+  var supportsPassive = false;
+  try {
+    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+      get: function () { supportsPassive = true; } 
+    }));
+  } catch(e) {}
+  
+  var wheelOpt = supportsPassive ? { passive: false } : false;
+  var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+  
+  // call this to Disable
+  function disableScroll() {
+    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+  }
+  
+  // call this to Enable
+  function enableScroll() {
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+  }
+  
+  disableScroll();
+  
+</script>
+</html>
