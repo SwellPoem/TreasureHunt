@@ -17,8 +17,8 @@ export function resizePuzzle() {
     var pageNum = parseInt(witness.split("witness")[1]);
     
 
-    var bgCols = ["#D34E24", "#563F1B", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF"];
-    var sqCols = ["#563F1B", "#D34E24", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF"];
+    var bgCols = ["#F1BA40", "#F1BA40", "#4b49f4", "#4b49f4", "#4b49f4", "#4b49f4", "#ff9900", "#ff9900"];
+    var sqCols = ["#563F1B", "#be860e", "#413ef4", "#413ef4", "#413ef4", "#413ef4", "#e68a00", "#e68a00"];
 
     // for each children item of the svg, set the width and height to the aspect ratio
     for (var i = 0; i < puzzle.children.length; i++) {
