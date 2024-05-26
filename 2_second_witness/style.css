@@ -159,3 +159,25 @@
       transform: translateY(0);
     }
   }
+
+  .end {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(23, 144, 25, 0.825);
+    background-size: cover;
+    background-position: center;
+    background-size: 100%;
+  }
+  
+  .end h1 {
+    margin-bottom: 50px;
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 45px;
+    text-align: center;
+    color: #eff4f6;
+  }
