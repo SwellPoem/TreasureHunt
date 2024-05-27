@@ -4,28 +4,29 @@
 }
 
 .support-button {
-    position: absolute;
-    top: 10px; 
-    left: 10px; 
-    z-index: 2;
-  
-    height: 10px;
-    padding: 15px 10px;
-    border: 3px solid #397488;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: rgba(245, 213, 0);
-    text-transform: uppercase;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #397488;
-    z-index: 5001;  
-  
-    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-  }
+  position: absolute;
+  top: 20px; 
+  left: 20px; 
+  z-index: 2;
+
+  height: 20px;
+  padding: 30px 20px;
+  border: 6px solid #397488;
+  border-radius: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  background-color: rgba(245, 213, 0);
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #397488;
+  z-index: 5001;  
+
+  transition: box-shadow 600ms ease-in-out, color 600ms ease-in-out;
+}
+
 
   #curtain {
     position: fixed;
@@ -181,3 +182,27 @@
     text-align: center;
     color: #eff4f6;
   }
+
+  @-webkit-keyframes roll {
+    from { -webkit-transform: rotate(0deg) }
+    to   { -webkit-transform: rotate(360deg) }
+    }
+    
+    @-moz-keyframes roll {
+    from { -moz-transform: rotate(0deg) }
+    to   { -moz-transform: rotate(360deg) }
+    }
+    
+    @keyframes roll {
+    from { transform: rotate(0deg) }
+    to   { transform: rotate(360deg) }
+    }
+    
+    .roll {
+    -moz-animation-name: roll;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: 3;
+    -webkit-animation-name: roll;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 3;
+    }
