@@ -369,8 +369,11 @@ window.loadHeader = function(titleText) {
   expandedSettings.appendChild(document.createElement('br'))
 
   // Theme
+  /////VALE///////////
+  var BACKGROUNDCOLOR = '#B5FFE9';
+  ///////////////////
   document.body.style.color = window.TEXT_COLOR
-  document.body.style.background = window.PAGE_BACKGROUND
+  document.body.style.background = BACKGROUNDCOLOR; ////VALE/////
   var themeButton = document.createElement('button')
   expandedSettings.appendChild(themeButton)
   if (window.settings.theme == 'night') {

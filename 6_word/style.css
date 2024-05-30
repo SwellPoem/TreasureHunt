@@ -1,0 +1,285 @@
+body {
+  background-color: rgb(185, 255, 81);
+  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  background-size: cover;
+  background-position: center;
+  background-size: 100%;
+}
+
+.phrase {
+  position:absolute;
+  margin-left: 9%;
+  margin-top: 20vh;
+  text-align: center;
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  color: #397488;
+}
+
+#myInput {
+  border: 3px solid #397488;
+  border-radius: 50px;
+  padding: 15px;
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  text-align: center;
+  background-color: transparent;
+}
+
+/* CONFIRM BUTTON */
+.confirm-button {
+  display: inline-block;
+  background-color: rgba(245, 213, 0);
+  padding: 15px 40px;
+  border: none;
+  border-radius: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(750px);
+
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #397488;
+
+  box-shadow: 0 3px 0 #397488;
+  cursor: pointer;
+  transition: all 100ms linear;
+  
+  /* &:hover {
+      transform: translateX(-50%) translateY(750px);
+      box-shadow: 0 7px 0 #397488;
+  } */
+
+  &:focus { outline: 0; }
+}
+
+#hint {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: rgba(28, 144, 32, 0.9); /* Semi-transparent black */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  animation: slideDown 0.5s ease-out;
+  z-index: 5000;
+}
+
+#hint-content {
+  text-align: left;
+  margin-left: 20px;
+  color: #282828;
+  font-size: 25px;
+  font-family: 'JMH Typewriter', sans-serif;
+  font-weight: 400;
+}
+
+#hint.hidden {
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+
+#hint-content p {
+  margin-bottom: 20px; /* Adjust this value as needed */
+}
+
+.highlight_hint {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/****************************/
+
+/* SUPPPORT BUTTON */
+.support-button {
+  position: absolute;
+  top: 10px; 
+  left: 10px; 
+  z-index: 2;
+
+  height: 10px;
+  padding: 15px 10px;
+  border: 3px solid #397488;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgba(245, 213, 0);
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #397488;
+  z-index: 5001;  
+
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  /* &:hover {
+    box-shadow: 0 0 40px 40px #397488 inset;
+  } */
+}
+
+#curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: rgba(245, 213, 0, 0.95);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  animation: slideDown 0.5s ease-out;
+  z-index: 5000;  
+}
+
+
+#curtain-content {
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #000000;
+  font-size: 20px;
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#curtain.hidden {
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+
+#curtain-mistake {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55%;
+  background-color: rgba(245, 49, 0, 0.9);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  animation: slideDown 0.5s ease-out;
+  z-index: 5000;  
+}
+
+
+#curtain-content {
+  text-align: left;
+  margin-left: 20px;
+  color: #000000;
+  font-size: 20px;
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#curtain-mistake.hidden {
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+
+#blur {
+  filter: blur(100px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  margin-bottom: 20px; /* Adjust this value as needed */
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/****************************/
+
+/* MENU BUTTON */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(185, 255, 81);
+  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  background-size: cover;
+  background-position: center;
+  background-size: 100%;
+}
+
+.menu h1 {
+  margin-bottom: 50px;
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 45px;
+  text-align: center;
+  color: #397488;
+}
+
+.menu button {
+  display: inline-block;
+  background-color: rgba(245, 213, 0);
+  padding: 15px 40px;
+  border: none;
+  border-radius: 30px;
+
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #397488;
+
+  box-shadow: 0 3px 0 #397488;
+  cursor: pointer;
+  transition: all 100ms linear;
+  
+  /* &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 7px 0 #397488;
+  } */
+
+  &:focus { outline: 0; }
+}
+
+.highlight {
+  font-weight: 700;
+}
+/******************************/
