@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(185, 255, 81);
+  background-color: rgb(251, 194, 166);
   background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
   background-size: cover;
   background-position: center;
@@ -8,7 +8,8 @@ body {
 
 .phrase {
   position:absolute;
-  margin-left: 9%;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: 20vh;
   text-align: center;
   font-family: "Play", sans-serif;
@@ -235,7 +236,7 @@ p {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgb(185, 255, 81);
+  background-color: rgb(251, 194, 166);
   background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
   background-size: cover;
   background-position: center;
