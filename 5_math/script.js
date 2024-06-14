@@ -2,7 +2,7 @@ const hintsMap = {
     'numberHolder1': 
         '<p>Ilaria e Silvia stanno pianificando di vendere limonata e biscotti alla prossima festa dei bambini del doposcuola. <br><br> ' +
         'Silvia ha notato che, vendendo 4 bicchieri di limonata e 2 pacchetti di biscotti, ha incassato 330 euro in un giorno. <i>Mortacci che bimbi ricchi!</i> Datemeli a me sti soldi invece di spenderli in limonata e biscottini! <br><br>' +
-        'Ilaria, che vendeva solo bicchieri di limonata al doppio del prezzo dei biscotti, ha incassato 207 euro in un giorno, vendendo un certo numero di bicchieri di limonata e il doppio dei pacchetti di biscotti rispetto ai bicchieri di limonata. <i>Che business signori!</i> <br><br>'+
+        'Ilaria, che vendeva bicchieri di limonata al doppio del prezzo dei biscotti, ha incassato 207 euro in un giorno, vendendo un certo numero di bicchieri di limonata e il doppio dei pacchetti di biscotti rispetto ai bicchieri di limonata. <i>Che business signori!</i> <br><br>'+
         'Quanto se le facevano pagare, ‘ste sporche capitaliste, ogni singolo pacco di biscotti e bicchiere di limonata? Spoiler: un botto, ma è un problema di matematica per una caccia al tesoro, non fatevi troppe domande, deve solo sembrare un casino.</p>',
     'numberHolder2': 
         'Il caro maestro Gabriele ha deciso di espandere la sua attività di maestro di scuola di ciclismo, espandendo il business lateralmente: perchè non includere, oltre ai bicicli, monocicli e tricicli? Che idea! Contattando il suo fornitore, questi gli dice che nel suo magazzino ci sono in totale 59 fra tricicli e monocicli, '+ 

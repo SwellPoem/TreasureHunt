@@ -1,4 +1,4 @@
-var CORRECT_ANSWER = 'culo';
+var CORRECT_ANSWER = "parola d'ordine";
 
 document.querySelector('.confirm-button').addEventListener('click', function() {
     var input = document.querySelector('#myInput').value;

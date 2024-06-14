@@ -206,3 +206,12 @@
     -webkit-animation-duration: 3s;
     -webkit-animation-iteration-count: 3;
     }
+
+    #granai {
+      width: 90%;
+    }
+
+    @keyframes granai {
+      from { opacity: 0%;}
+      to { opacity: 100%;}
+    }
