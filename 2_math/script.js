@@ -24,12 +24,12 @@ const solutionsArray = [41, 83, 47, 12, 50, 37]
 const finalTextArray = ["41 . ", "83", "47 N", "12 . ", "50", "37 E"]
 
 const targetPositionsArray = [
-    {top: 120.5, left: 16.65625},
-    {top: 120.5, left: 142.984375},
-    {top: 120.5, left: 269.3125},
-    {top: 310.5, left: 16.65625},
-    {top: 310.5, left: 142.984375},
-    {top: 310.5, left: 269.3125}
+    {top: 120.5, left: 8.65625},
+    {top: 120.5, left: 134.984375},
+    {top: 120.5, left: 261.3125},
+    {top: 310.5, left: 8.65625},
+    {top: 310.5, left: 134.984375},
+    {top: 310.5, left: 261.3125}
 ]
 
 var isClicked = false;
@@ -118,6 +118,10 @@ function checkSolution() {
 
             doAnimate = false;
         }
+
+        var codiceRisolto = document.getElementById('codice-risolto');
+        codiceRisolto.style.display = 'block';
+
     } else {
         // abbassa la curtain
         document.getElementById('curtain-risolto').classList.toggle('hidden');
