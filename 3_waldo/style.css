@@ -200,3 +200,9 @@ body {
     box-shadow: 0 0 40px 40px #397488 inset;
   } */
 }
+
+#granai {
+  width: 100%;
+  height: 100%; 
+  border: 2px solid #000;
+}
