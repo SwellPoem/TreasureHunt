@@ -1,4 +1,4 @@
-var CORRECT_ANSWER = "parola d'ordine";
+var CORRECT_ANSWER = "parola segreta";
 
 document.querySelector('.confirm-button').addEventListener('click', function() {
     var input = document.querySelector('#myInput').value;
