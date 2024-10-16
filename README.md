@@ -1,4 +1,4 @@
-## Treasure Hunt
+# Treasure Hunt
 This is an ensamble of different games specifically designed for a treasure hunt game night for our friends.
 
 ### Games
